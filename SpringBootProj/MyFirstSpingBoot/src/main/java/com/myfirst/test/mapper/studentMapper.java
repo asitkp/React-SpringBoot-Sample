@@ -1,0 +1,21 @@
+package com.myfirst.test.mapper;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import org.springframework.jdbc.core.RowMapper;
+
+import com.myfirst.test.model.Student;
+
+public class studentMapper implements RowMapper<Student>{
+
+	@Override
+	public Student mapRow(ResultSet rs, int rowNum) throws SQLException {
+		// TODO Auto-generated method stub
+		Student student=new Student();
+		student.setRoll_number(rs.getInt("role_number"));
+		student.setName(rs.getString("name"));
+		return student;
+	}
+
+}
